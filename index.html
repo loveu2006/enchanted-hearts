@@ -13,56 +13,37 @@ body{
   overflow-x:hidden;
 }
 
-/* Sections */
 section{
-  padding:70px 20px;
+  padding:60px 20px;
   text-align:center;
 }
 
-/* Headings */
 h1,h2{
   color:#ff2f75;
   text-shadow:0 0 10px rgba(255,77,136,.4);
 }
 
-/* Text */
 p{
   color:#444;
   line-height:1.9;
   font-size:16px;
 }
 
-/* Card */
 .card{
   background:white;
-  border-radius:30px;
+  border-radius:28px;
   padding:35px;
-  max-width:550px;
+  max-width:600px;
   margin:40px auto;
   box-shadow:0 25px 50px rgba(0,0,0,.2);
-  animation:floatUp 1.5s ease;
+  animation:fadeUp 1.5s ease;
 }
 
-@keyframes floatUp{
+@keyframes fadeUp{
   from{opacity:0;transform:translateY(60px)}
   to{opacity:1;transform:translateY(0)}
 }
 
-/* Images */
-img{
-  width:100%;
-  border-radius:25px;
-  margin-top:20px;
-  animation:pulse 5s infinite;
-}
-
-@keyframes pulse{
-  0%{transform:scale(1)}
-  50%{transform:scale(1.03)}
-  100%{transform:scale(1)}
-}
-
-/* Buttons */
 button{
   background:linear-gradient(45deg,#ff2f75,#ff85b2);
   color:white;
@@ -89,8 +70,8 @@ button{
   color:#ff2f75;
 }
 @keyframes float{
-  from{transform:translateY(110vh) scale(.8);opacity:1}
-  to{transform:translateY(-10vh) scale(1.2);opacity:0}
+  from{transform:translateY(110vh);opacity:1}
+  to{transform:translateY(-10vh);opacity:0}
 }
 
 /* Diary popup */
@@ -108,8 +89,8 @@ button{
   background:#fff4fb;
   padding:35px;
   border-radius:25px;
-  max-width:450px;
-  animation:floatUp 1.2s ease;
+  max-width:480px;
+  animation:fadeUp 1.2s ease;
 }
 
 .close{
@@ -132,73 +113,80 @@ button{
 <body>
 
 <section>
-  <h1>You Made My World Beautiful 💕</h1>
-  <p>Scroll slowly… this page is breathing love 🥹</p>
+  <h1>For You, Aqsa 💕</h1>
+  <p>Slowly scroll… this page is made only for you 🥺</p>
 </section>
 
 <div class="card">
-  <h2>A Letter From My Heart 💌</h2>
-  <p>
-    Aqsa my love… mujhe pata hai ye dekh ke  
-    tum mujhe kaanpatti ke niche ek lagane wali ho 😭  
-    par meri pyari aur khubsurat Aqsa,  
-    I’m really really sorry 🤍
-    <br><br>
-    Kabhi kabhi mai behak jata hu,  
-    upar-niche bol deta hu —  
-    please ignore kiya kro,  
-    apna mood kharab mat kiya kro.
-    <br><br>
-    Mujhe TVD ke reels tumhare sath dekhni hai,  
-    rona hai sath…  
-    <b>CAN WE please sath me dekhein?</b> 🥺
-    <br><br>
-    Tum chup ho jaati ho toh  
-    meri duniya hil jaati hai 😭
-  </p>
-</div>
-
-<div class="card">
-  <h2>Our Fluffy Love 🐾</h2>
-  <img src="https://images.unsplash.com/photo-1601758123927-196d5b7a8a58" alt="Persian cat">
-  <img src="https://images.unsplash.com/photo-1595433707802-6b2626ef1c91" alt="Persian cat">
+<h2>A Letter From My Heart 💌</h2>
+<p>
+Aqsa my love, I know ye dekhne ke baad tum mujhe kaanpati ke niche ek lagane wali ho 😭  
+par meri pyari aur khubsurat Aqsa, I’m really sorry my love 🤍  
+<br><br>
+Kabhi kabhi mai behak jata hoon, thoda upar-neeche bol deta hoon.  
+Usko ignore kiya karo na, apna mood kharab mat kiya karo Aqsa 🥺  
+<br><br>
+Malum hai dikkat kya hoti hai?  
+Mai kehna kuch aur chahta hoon aur keh kuch aur deta hoon.  
+Par aage se poora khayal rakhunga, soch-samajh ke hi bolunga meri Aqsaaaa 🤍  
+<br><br>
+Mujhe TVD ke reels tumhare saath dekhni hain, tumhare saath rona hai.  
+CAN WE please please please saath mein reels dekhein? 🥹  
+<br><br>
+Aqsa, ab apna mood theek kar lo please.  
+Tum chup ho jaati ho toh meri duniya upar-neeche ho jaati hai 😭  
+<br><br>
+Khair… shaadi mein umeed hai tumne bohot maze kiye honge,  
+ye bohot achhi baat hai. Khush raho meri pyari si bachhi 🤍  
+<br><br>
+Allah tumhe bohot bohot bohot khush rakhe,  
+apni hifazat mein rakhe, khair-o-afiyat se rakhe 🤲  
+<br><br>
+Aur haan Aqsa, tumne mujhe dua ke liye bola tha na —  
+InshaAllah Allah uss dua ko bohot jaldi qubool karega. Ameen 🤍  
+<br><br>
+At last bas itna kehna hai ke I’m really sorry,  
+please khush ho jao na… aur aao ab saath mein reels dekhenge 🥺❤️  
+<br><br>
+Aur haan… kaala tikka kaan ke niche lagaya karo,  
+warna agar kisi badbakht ki nazar lag gayi na  
+toh phir khair nahi 😤🧿
+</p>
 </div>
 
 <section>
-  <button onclick="openDiary()">Surprise Revealed 💖</button>
+<button onclick="openDiary()">Surprise Note 📖</button>
 </section>
 
-<!-- Diary -->
 <div id="diary">
   <div class="diary-box">
     <div class="close" onclick="closeDiary()">✖</div>
     <h2>📖 From My Diary</h2>
     <p>
-      Ayeeee khubsurat aankhon wali malika 👸🏻 
-      apna khub khayal rakha kro.
-      <br><br>
-      (Marri nahi hu mai 😤)  
-      fir bhi apna dhyaan rakha kro.
-      <br><br>
-      Time se khana 🍽️  
-      aur peene me sirf chai ☕ coffee ☕ pani 💧
-      <br><br>
-      Aur haan…  
-      chahe chaar baate suna dena mujhe,  
-      mai ready hu 😌  
-      par please block mat karna  
-      aur ghost bhi mat karna 😭😭
+Ayeeee khubsurat aankhon wali malika 👑  
+apna khub khayal rakha karo.  
+<br><br>
+(Marri nahi ho 😤)  
+fir bhi apna dhyaan rakha karo.  
+<br><br>
+Time se khana 🍽️  
+aur peene mein sirf chai ☕ coffee ☕ aur pani 💧  
+<br><br>
+Aur haan…  
+chahe chaar baate suna dena mujhe,  
+mai ready hoon 😌  
+par please block mat karna  
+aur ghost bhi mat karna 😭😭
     </p>
   </div>
 </div>
 
-<!-- 🎶 MUSIC : Chubina (East Duo) Vibe – Instrumental -->
 <audio id="bgMusic" loop>
-  <source src="https://cdn.pixabay.com/download/audio/2022/10/03/audio_1e5c1cfc44.mp3" type="audio/mpeg">
+  <source src="https://cdn.pixabay.com/download/audio/2023/03/06/audio_9c2a4d45ab.mp3">
 </audio>
 
 <div class="music-btn">
-  <button onclick="playMusic()">Play Music 🎶</button>
+<button onclick="playMusic()">Play Music 🎶</button>
 </div>
 
 <script>
@@ -212,14 +200,14 @@ function playMusic(){
   document.getElementById("bgMusic").play();
 }
 
-/* Floating hearts */
-for(let i=0;i<35;i++){
-  let h=document.createElement("div");
-  h.className="heart";
-  h.innerHTML="💖";
-  h.style.left=Math.random()*100+"vw";
-  h.style.animationDuration=4+Math.random()*4+"s";
-  document.body.appendChild(h);
+// Floating hearts
+for(let i=0;i<30;i++){
+ let h=document.createElement("div");
+ h.className="heart";
+ h.innerHTML="💖";
+ h.style.left=Math.random()*100+"vw";
+ h.style.animationDuration=4+Math.random()*4+"s";
+ document.body.appendChild(h);
 }
 </script>
 
