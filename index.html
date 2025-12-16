@@ -9,69 +9,122 @@
 body{
   margin:0;
   font-family:'Segoe UI',sans-serif;
-  background:linear-gradient(180deg,#ff9acb,#ffc1dd);
+  background:linear-gradient(180deg,#ff8ec7,#ffd6e8);
   overflow-x:hidden;
 }
+
+/* Sections */
 section{
-  padding:60px 20px;
+  padding:70px 20px;
   text-align:center;
 }
+
+/* Headings */
+h1,h2{
+  color:#ff2f75;
+  text-shadow:0 0 10px rgba(255,77,136,.4);
+}
+
+/* Text */
+p{
+  color:#444;
+  line-height:1.9;
+  font-size:16px;
+}
+
+/* Card */
 .card{
   background:white;
-  border-radius:25px;
-  padding:25px;
-  max-width:380px;
-  margin:25px auto;
-  box-shadow:0 20px 40px rgba(0,0,0,.15);
-  animation:fadeUp 1s ease;
+  border-radius:30px;
+  padding:35px;
+  max-width:550px;
+  margin:40px auto;
+  box-shadow:0 25px 50px rgba(0,0,0,.2);
+  animation:floatUp 1.5s ease;
 }
-@keyframes fadeUp{
-  from{opacity:0;transform:translateY(40px)}
+
+@keyframes floatUp{
+  from{opacity:0;transform:translateY(60px)}
   to{opacity:1;transform:translateY(0)}
 }
-h1,h2{
-  color:#ff3f8f;
-}
-p{
-  color:#555;
-  line-height:1.8;
-  font-size:15.5px;
-}
+
+/* Images */
 img{
   width:100%;
-  border-radius:20px;
+  border-radius:25px;
+  margin-top:20px;
+  animation:pulse 5s infinite;
 }
-button{
-  background:#ff3f8f;
-  color:white;
-  border:none;
-  padding:15px 30px;
-  border-radius:30px;
-  font-size:16px;
-  cursor:pointer;
-  animation:pulse 1.5s infinite;
-}
+
 @keyframes pulse{
   0%{transform:scale(1)}
-  50%{transform:scale(1.07)}
+  50%{transform:scale(1.03)}
   100%{transform:scale(1)}
 }
+
+/* Buttons */
+button{
+  background:linear-gradient(45deg,#ff2f75,#ff85b2);
+  color:white;
+  border:none;
+  padding:16px 36px;
+  font-size:17px;
+  border-radius:40px;
+  cursor:pointer;
+  box-shadow:0 15px 30px rgba(0,0,0,.3);
+  animation:glow 2s infinite;
+}
+
+@keyframes glow{
+  0%{box-shadow:0 0 10px #ff85b2}
+  50%{box-shadow:0 0 25px #ff2f75}
+  100%{box-shadow:0 0 10px #ff85b2}
+}
+
+/* Floating hearts */
 .heart{
   position:fixed;
   font-size:18px;
-  animation:float 6s linear infinite;
+  animation:float 7s linear infinite;
+  color:#ff2f75;
 }
 @keyframes float{
-  from{transform:translateY(100vh)}
-  to{transform:translateY(-10vh)}
+  from{transform:translateY(110vh) scale(.8);opacity:1}
+  to{transform:translateY(-10vh) scale(1.2);opacity:0}
 }
-.cat{
-  font-size:70px;
-  animation:jump 1.4s infinite alternate;
+
+/* Diary popup */
+#diary{
+  display:none;
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,.7);
+  justify-content:center;
+  align-items:center;
+  z-index:999;
 }
-@keyframes jump{
-  from{transform:translateY(0)}
-  to{transform:translateY(-18px)}
+
+.diary-box{
+  background:#fff4fb;
+  padding:35px;
+  border-radius:25px;
+  max-width:450px;
+  animation:floatUp 1.2s ease;
+}
+
+.close{
+  text-align:right;
+  cursor:pointer;
+  color:#ff2f75;
+  font-weight:bold;
+}
+
+/* Music button */
+.music-btn{
+  position:fixed;
+  bottom:20px;
+  right:20px;
+  z-index:1000;
 }
 </style>
 </head>
@@ -79,78 +132,88 @@ button{
 <body>
 
 <section>
-  <div class="card">
-    <div class="cat">🐱💗</div>
-    <h1>Aqsa, My Love</h1>
-  </div>
+  <h1>You Made My World Beautiful 💕</h1>
+  <p>Scroll slowly… this page is breathing love 🥹</p>
 </section>
 
-<section>
-  <div class="card">
-    <img src="https://images.unsplash.com/photo-1518791841217-8f162f1e1131">
-  </div>
-</section>
+<div class="card">
+  <h2>A Letter From My Heart 💌</h2>
+  <p>
+    Aqsa my love… mujhe pata hai ye dekh ke  
+    tum mujhe kaanpatti ke niche ek lagane wali ho 😭  
+    par meri pyari aur khubsurat Aqsa,  
+    I’m really really sorry 🤍
+    <br><br>
+    Kabhi kabhi mai behak jata hu,  
+    upar-niche bol deta hu —  
+    please ignore kiya kro,  
+    apna mood kharab mat kiya kro.
+    <br><br>
+    Mujhe TVD ke reels tumhare sath dekhni hai,  
+    rona hai sath…  
+    <b>CAN WE please sath me dekhein?</b> 🥺
+    <br><br>
+    Tum chup ho jaati ho toh  
+    meri duniya hil jaati hai 😭
+  </p>
+</div>
+
+<div class="card">
+  <h2>Our Fluffy Love 🐾</h2>
+  <img src="https://images.unsplash.com/photo-1601758123927-196d5b7a8a58" alt="Persian cat">
+  <img src="https://images.unsplash.com/photo-1595433707802-6b2626ef1c91" alt="Persian cat">
+</div>
 
 <section>
-  <div class="card">
-    <h2>A Letter From My Heart 💌</h2>
+  <button onclick="openDiary()">Surprise Revealed 💖</button>
+</section>
+
+<!-- Diary -->
+<div id="diary">
+  <div class="diary-box">
+    <div class="close" onclick="closeDiary()">✖</div>
+    <h2>📖 From My Diary</h2>
     <p>
-      Aqsa my love,  
-      I know ye dekhne ke baad tum mujhe kaanpatti ke niche ek lagane wali ho 😭  
-      par meri pyari aur khubsurat Aqsa, I’m really really sorry my love.
+      Ayeeee khubsurat aankhon wali malika 👸🏻 
+      apna khub khayal rakha kro.
       <br><br>
-      Kabhi kabhi mai behak jaata hoon, thoda upar-neeche bol deta hoon.
-      Usko ignore kiya karo please, apna mood kharab mat kiya karo Aqsa.
-      Mujhe pata hai dikkat kya hoti hai — kehna kuch aur hota hai,
-      aur keh kuch aur deta hoon…  
-      par aage se khayal rakh ke bolunga, promise 🤍
+      (Marri nahi hu mai 😤)  
+      fir bhi apna dhyaan rakha kro.
       <br><br>
-      Aqsaaaa, mujhe TVD ke reels tumhare saath dekhni hain,
-      tumhare saath rona hai…  
-      CAN WE please please please saath mein reels dekhein? 🥺
+      Time se khana 🍽️  
+      aur peene me sirf chai ☕ coffee ☕ pani 💧
       <br><br>
-      Tum chup ho jaati ho toh meri duniya upar-neeche ho jaati hai 😭
-      <br><br>
-      Shadi mein ummeed hai tumne khoob maze kiye honge —
-      achhi baat hai, khush raho meri pyari si bachhi 🤍  
-      Allah tumhe bohot bohot bohot khush rakhe,
-      apni hifazat mein rakhe, khair-o-afiyat se rakhe.
-      <br><br>
-      Aur Aqsa, tumne bola tha dua ke liye —
-      Allah uss dua ko bohot jaldi qubool karega,  
-      InshaAllah, Ameen 🤲
-      <br><br>
-      At last, bas itna hi kehna hai ki  
-      I’m really sorry…  
-      please khush ho jao…  
-      aur aao, ab saath mein reels dekhenge 💖
-      <br><br>
-      Aur haan 😤  
-      **kala tikka kaan ke niche lagaya karo**  
-      warna agar kisi badbakht ne nazar laga di toh  
-      khair nahi 😌🧿
+      Aur haan…  
+      chahe chaar baate suna dena mujhe,  
+      mai ready hu 😌  
+      par please block mat karna  
+      aur ghost bhi mat karna 😭😭
     </p>
   </div>
-</section>
+</div>
 
-<section>
-  <div class="card">
-    <img src="https://images.unsplash.com/photo-1595433562696-19e51e41b7c5">
-  </div>
-</section>
-
-<section>
-  <button onclick="alert('Aqsa, tum meri duniya ho 💖')">
-    Surprise Revealed 💕
-  </button>
-</section>
-
-<audio autoplay loop>
-  <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3">
+<!-- 🎶 MUSIC : Chubina (East Duo) Vibe – Instrumental -->
+<audio id="bgMusic" loop>
+  <source src="https://cdn.pixabay.com/download/audio/2022/10/03/audio_1e5c1cfc44.mp3" type="audio/mpeg">
 </audio>
 
+<div class="music-btn">
+  <button onclick="playMusic()">Play Music 🎶</button>
+</div>
+
 <script>
-for(let i=0;i<30;i++){
+function openDiary(){
+  document.getElementById("diary").style.display="flex";
+}
+function closeDiary(){
+  document.getElementById("diary").style.display="none";
+}
+function playMusic(){
+  document.getElementById("bgMusic").play();
+}
+
+/* Floating hearts */
+for(let i=0;i<35;i++){
   let h=document.createElement("div");
   h.className="heart";
   h.innerHTML="💖";
